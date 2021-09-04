@@ -36,6 +36,18 @@ enum preonic_keycodes {
   BACKLIT
 };
 
+// Left-hand home row mods
+#define HOME_A LGUI_T(SE_A)
+#define HOME_R LALT_T(SE_R)
+#define HOME_S LSFT_T(SE_S)
+#define HOME_T LCTL_T(SE_T)
+
+// Right-hand home row mods
+#define HOME_N RCTL_T(SE_N)
+#define HOME_E RSFT_T(SE_E)
+#define HOME_I LALT_T(SE_I)
+#define HOME_O RGUI_T(SE_O)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
@@ -75,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_COLEMAK] = LAYOUT_preonic_grid(
   SE_GRV,  SE_1,    SE_2,    SE_3,    SE_4,    SE_5,    SE_6,    SE_7,    SE_8,    SE_9,    SE_0,    KC_BSPC,
   KC_TAB,  SE_Q,    SE_W,    SE_F,    SE_P,    SE_B,    SE_J,    SE_L,    SE_U,    SE_Y,    SE_SCLN, KC_DEL,
-  KC_ESC,  SE_A,    SE_R,    SE_S,    SE_T,    SE_G,    SE_M,    SE_N,    SE_E,    SE_I,    SE_O,    KC_QUOT,
+  KC_ESC,HOME_A,  HOME_R,  HOME_S,  HOME_T,    SE_G,    SE_M,  HOME_N,  HOME_E,  HOME_I,  HOME_O,    KC_QUOT,
   KC_LSFT, SE_Z,    SE_X,    SE_C,    SE_D,    SE_V,    SE_K,    SE_H,    SE_COMM, SE_DOT,  KC_UP,   KC_ENT,
   KC_LCTL, KC_LGUI, KC_LALT, NUM,    LOWER,    KC_SPC,  KC_SPC,  RAISE,   SE_SLSH, KC_LEFT, KC_DOWN, KC_RGHT
 ),
